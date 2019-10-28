@@ -9,7 +9,7 @@
 Summary:	A fast and modern Python SOAP client
 Name:		python-%{pypi_name}
 Version:	3.3.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/zeep/zeep-%{version}.tar.gz
