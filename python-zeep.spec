@@ -8,12 +8,12 @@
 %define		pypi_name	zeep
 Summary:	A fast and modern Python SOAP client
 Name:		python-%{pypi_name}
-Version:	3.3.1
-Release:	3
+Version:	3.4.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/zeep/zeep-%{version}.tar.gz
-# Source0-md5:	f4c6c94052f7498a4962c72d0e771591
+# Source0-md5:	70f1b5bc7c35173a69bfea4f5ffa77e7
 URL:		https://pypi.org/project/zeep/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
