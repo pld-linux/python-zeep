@@ -1,5 +1,5 @@
 # Conditional build:
-%bcond_without	tests	# unit tests
+%bcond_with	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
@@ -9,7 +9,7 @@
 Summary:	A fast and modern Python SOAP client
 Name:		python-%{pypi_name}
 Version:	3.3.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/zeep/zeep-%{version}.tar.gz
@@ -21,17 +21,56 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	python-cached_property
 BuildRequires:	python-defusedxml
 BuildRequires:	python-modules
-BuildRequires:	python-pretend
 BuildRequires:	python-requests-toolbelt
 BuildRequires:	python-setuptools
+BuildRequires:	python-isodate >= 0.5.4
+BuildRequires:	python-attrs >= 17.2.0
+BuildRequires:	python-pretend >= 1.0.8
+BuildRequires:	python-pyflakes >= 1.5.0
+BuildRequires:	python-pycodestyle >= 2.0.0
+BuildRequires:	python-mccabe >= 0.6.0
+BuildRequires:	python-configparser
+BuildRequires:	python-tornado
+%if %{with tests}
+BuildRequires:	python-flake8-imports >= 0.1.1
+BuildRequires:	python-flake8-debugger >= 1.4.0
+BuildRequires:	python-flake8-blind-except >= 0.1.1
+BuildRequires:	python-flake8 >= 3.3.0
+BuildRequires:	python-isort >= 4.2.15
+BuildRequires:	python-freezegun >= 0.3.8
+BuildRequires:	python-pretend
+BuildRequires:	python-pytest >= 3.1.3
+BuildRequires:	python-pytest-cov >= 2.5.1
+BuildRequires:	python-pytest-tornado >= 0.4.5
+BuildRequires:	python-requests_mock >= 0.7.0
+%endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-cached_property
 BuildRequires:	python3-defusedxml
 BuildRequires:	python3-modules
-BuildRequires:	python3-pretend
 BuildRequires:	python3-requests-toolbelt
 BuildRequires:	python3-setuptools
+BuildRequires:	python3-isodate >= 0.5.4
+BuildRequires:	python3-attrs >= 17.2.0
+BuildRequires:	python3-pretend >= 1.0.8
+BuildRequires:	python3-pyflakes >= 1.5.0
+BuildRequires:	python3-pycodestyle >= 2.0.0
+BuildRequires:	python3-mccabe >= 0.6.0
+BuildRequires:	python3-tornado
+%if %{with tests}
+BuildRequires:	python3-flake8-imports >= 0.1.1
+BuildRequires:	python3-flake8-debugger >= 1.4.0
+BuildRequires:	python3-flake8-blind-except >= 0.1.1
+BuildRequires:	python3-flake8 >= 3.3.0
+BuildRequires:	python3-isort >= 4.2.15
+BuildRequires:	python3-freezegun >= 0.3.8
+BuildRequires:	python3-pretend
+BuildRequires:	python3-pytest >= 3.1.3
+BuildRequires:	python3-pytest-cov >= 2.5.1
+BuildRequires:	python3-pytest-tornado >= 0.4.5
+BuildRequires:	python3-requests_mock >= 0.7.0
+%endif
 %endif
 Requires:	python-modules
 BuildArch:	noarch
